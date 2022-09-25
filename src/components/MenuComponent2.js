@@ -35,4 +35,5 @@ const Menu2 = (props) => {
     )
 
 }
+
 export default Menu2;
