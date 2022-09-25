@@ -7,14 +7,11 @@ class Menu extends React.Component {
         super(props);
 
         this.state = {
-            selectedDish: null  
+            selectedDish: null
         }
         console.log("Menu Component Constructor is invoked");
     }
 
-    componentDidMount(){
-        console.log("Menu Component ComponentDidMount is invoked");
-    }
 
     render() {
         const menu = this.props.dishes.map((dish) => {

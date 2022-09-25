@@ -9,6 +9,14 @@
 
 class Dishdetail extends React.Component{
 
+    componentDidMount(){
+        console.log("Dishdetail Component ComponentDidMount is invoked");
+    }
+
+    componentDidUpdate(){
+        console.log("Dishdetail Component ComponentDidUpdate is invoked");
+    }
+
     constructor(props){
         super(props);
 
@@ -29,7 +37,6 @@ class Dishdetail extends React.Component{
             </Card>
             </div>
         );
-
     }
 
     renderComments(){
@@ -49,7 +56,6 @@ class Dishdetail extends React.Component{
             }
         });
 
-        console.log("renderComments")
 
         return(
             <div>
@@ -60,7 +66,9 @@ class Dishdetail extends React.Component{
     }
 
     render() {
-        console.log("DishDetail Rendered")
+
+        console.log("Dishdetail Component Render is invoked")
+
         return(
             <div className="row">
                 <div className="col-12 col-md-5 m-1">

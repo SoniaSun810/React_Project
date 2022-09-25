@@ -5,6 +5,7 @@ import '../App.css';
 import { DISHES } from '../shared/dishes';
 import Menu from './MenuComponent';
 import Dishdetail from './DishdetailComponent';
+import Menu2 from './MenuComponent2';
 
 
 class Main extends React.Component {
@@ -14,13 +15,22 @@ class Main extends React.Component {
 
     this.state = { 
         dishes: DISHES,
-        selectedDish: null
+        selectedDish: 0
     };
   }
 
   onDishSelect(dishId) {
     this.setState({ selectedDish: dishId});
   }
+
+  // isToDisplay(){
+  //   const dish = this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]
+  //   if (dish != null){
+  //     return dish
+  //   } else {
+  //     return this.state.dishes[0]
+  //   }
+  // }
 
   
   render(){
@@ -31,8 +41,9 @@ class Main extends React.Component {
               <NavbarBrand href="/">Pastoral Restaurant</NavbarBrand>
             </div>
           </Navbar>
-          <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)}/>
-          <dishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+          <Menu2 dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)}/>
+          {/* <Dishdetail dish={this.state.dishes[0]}/> */}
+          <Dishdetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
         </div>
     );
 }
