@@ -19,7 +19,7 @@ function RenderDish({dish}){
                     <CardText>{dish.description}</CardText>
                 </CardBody>
             </Card>
-            </div>
+        </div>
     );
 }
 

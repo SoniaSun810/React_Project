@@ -12,6 +12,7 @@ import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import { Routes, Route, Navigate, useParams} from "react-router-dom";
+import About from './AboutComponent';
 
 
 class Main extends React.Component {
@@ -61,6 +62,7 @@ class Main extends React.Component {
               <Route path="/home" element={<HomePage/>} />
               <Route exact path='/menu' element={< Menu/>} />
               <Route path='menu/:dishId' element={< DishWithID/>}  />
+              <Route exact path='/aboutus' element={< About leaders={this.state.leaders}/>} />
               <Route exact path='/contactus' element={< Contact/>} />
               <Route path="/" element={<Navigate replace to="/home" />} />
             </Routes>
