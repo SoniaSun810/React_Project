@@ -1,22 +1,20 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, } from 'reactstrap';
+import { Collapse, Breadcrumb, BreadcrumbItem, Card, CardText, CardTitle, CardSubtitle, Button,  CardBody, CardHeader, } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
 function RenderLeader({leader}){
+
     return (
-        <div className='row'>
-            <Media >
-            <Media left className='col-4' >
-                <Media left src={leader.image} width={250} height={250} />
-            </Media>
-            <Media body >
-                <Media heading>{leader.name}</Media>
-                <h5>{leader.designation}</h5>
-                <Media text>{leader.description}</Media>
-            </Media>
-         </Media>
-        </div>   
+            <Card style={{ width: '20rem', outerHeight: '30rem'}}>
+                <img alt="Sample" src={leader.image}/>
+                <CardBody>
+                    <CardTitle tag="h5">{leader.name}</CardTitle>
+                    <CardSubtitle className="mb-2 text-muted" tag="h6">{leader.designation}</CardSubtitle>
+                    <CardText>{leader.description}</CardText>
+                    <Button>To known more</Button>
+                </CardBody>
+            </Card>
       );
 }
 
@@ -81,12 +79,10 @@ const About = (props) => {
                 </div>
             </div>
             <div className="row row-content">
-                <div className="col-12">
-                    <h2>Corporate Leadership</h2>
-                </div>
-                <div className="col-12">
-                    {leaders}
-                </div>
+                <h2>Corporate Leadership</h2>
+            <div className="row">
+                {leaders}
+            </div>
             </div>
         </div>
     );
